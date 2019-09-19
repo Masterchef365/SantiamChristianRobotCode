@@ -10,6 +10,7 @@
 #include <string>
 
 #include <frc/TimedRobot.h>
+#include <ctre/Phoenix.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot {
@@ -23,4 +24,6 @@ class Robot : public frc::TimedRobot {
         void TestPeriodic() override;
 
     private:
+        std::shared_ptr<TalonSRX> drivebase_left;
+        std::shared_ptr<TalonSRX> drivebase_right;
 };

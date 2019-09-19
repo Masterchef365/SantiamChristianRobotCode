@@ -1,4 +1,6 @@
-C++
+Santian Christian C++ Robot code (Duncan's contingency plan)
 ---
 
-This example involves building and deploying C++ sources. This should be all you need to get started.
+What has been done so far:
+    * Download and extract cpp.zip from https://github.com/wpilibsuite/GradleRIO/releases
+    * Download and extract `CTRE Phoenix Framework (No Installer) package 5.14.1 (.zip)` from http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources, and copy `vendordeps` into the project
