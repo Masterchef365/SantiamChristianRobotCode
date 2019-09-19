@@ -1,2 +1,4 @@
 build
 .gradle
+compile_commands.json
+create_compile_commands.sh
