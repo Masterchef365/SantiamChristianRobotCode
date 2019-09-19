@@ -7,23 +7,23 @@
 
 #include "Robot.h"
 
-#include <iostream>
-
-#include <frc/smartdashboard/SmartDashboard.h>
-
+// Joystick preferences
 const int joy_idx = 0;
 const int joy_x_axis_idx = 1;
 const int joy_y_axis_idx = 4;
 const int joy_manipulator_button = 4;
 
+// TalonSRX Addressing
 const int drivebase_talonsrx_id_left = 0;
 const int drivebase_talonsrx_id_right = 1;
 const int manipulator_talonsrx_id = 2;
 
+// Motor speed settings
 const float manipulator_speed = 1.0;
 const float drive_speed = 1.0;
 
 void Robot::RobotInit() {
+    // Initialize motor controllers and set pointers on this object 
     this->drivebase_left = new TalonSRX(drivebase_talonsrx_id_left);
     this->drivebase_right = new TalonSRX(drivebase_talonsrx_id_right);
     this->manipulator = new TalonSRX(manipulator_talonsrx_id);
@@ -31,13 +31,20 @@ void Robot::RobotInit() {
 }
 
 void Robot::TeleopPeriodic() {
+    // Capture joystick input
     float joy_x = joy->GetRawAxis(joy_x_axis_idx);
     float joy_y = joy->GetRawAxis(joy_y_axis_idx); 
+
+    // Calculate tank-drive joystick movements
+    // TODO: Clamp values between -1.0 and 1.0
     float drive_left_percent = joy_y - joy_x;
     float drive_right_percent = joy_y + joy_x;
+
+    // Set drivebase speeds
     this->drivebase_left->Set(ControlMode::PercentOutput, drive_left_percent * drive_speed);
     this->drivebase_right->Set(ControlMode::PercentOutput, drive_right_percent * drive_speed);
 
+    // Activate manipulator if the button is pressed
     if (joy->GetRawButton(joy_manipulator_button)) {
         this->manipulator->Set(ControlMode::PercentOutput, manipulator_speed);
     } else {

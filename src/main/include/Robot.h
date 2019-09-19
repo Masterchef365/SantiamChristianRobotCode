@@ -28,9 +28,12 @@ class Robot : public frc::TimedRobot {
     private:
         // TODO: Use std::shared_ptr<T> or std::unique_ptr<T> for greater safety.
         // WARNING: Currently incorrect as these items are never deallocated.
+
+        // Pointers to motor controller objects
         TalonSRX* drivebase_left;
         TalonSRX* drivebase_right;
         TalonSRX* manipulator;
 
+        // Pointers to Joystick controller objects
         frc::Joystick* joy;
 };
