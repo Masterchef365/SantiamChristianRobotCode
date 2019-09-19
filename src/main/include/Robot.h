@@ -13,7 +13,7 @@
 #include <ctre/Phoenix.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
-#include <Joystick.h>
+#include <frc/Joystick.h>
 
 class Robot : public frc::TimedRobot {
     public:
