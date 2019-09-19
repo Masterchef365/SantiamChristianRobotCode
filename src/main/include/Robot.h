@@ -13,6 +13,8 @@
 #include <ctre/Phoenix.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
+#include <Joystick.h>
+
 class Robot : public frc::TimedRobot {
     public:
         void RobotInit() override;
@@ -24,6 +26,11 @@ class Robot : public frc::TimedRobot {
         void TestPeriodic() override;
 
     private:
-        std::shared_ptr<TalonSRX> drivebase_left;
-        std::shared_ptr<TalonSRX> drivebase_right;
+        // TODO: Use std::shared_ptr<T> or std::unique_ptr<T> for greater safety.
+        // WARNING: Currently incorrect as these items are never deallocated.
+        TalonSRX* drivebase_left;
+        TalonSRX* drivebase_right;
+        TalonSRX* manipulator;
+
+        frc::Joystick* joy;
 };
