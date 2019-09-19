@@ -3,5 +3,6 @@ Santian Christian C++ Robot code (Duncan's contingency plan)
 
 What has been done so far:
 * Download and extract cpp.zip from https://github.com/wpilibsuite/GradleRIO/releases
+* Change "teamNumber" to 7448 in `.wpilib/wpilib_preferences.json`, which will facilitate deployment to the robot.
 * Download and extract `CTRE Phoenix Framework (No Installer) package 5.14.1 (.zip)` from http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_resources, and copy `vendordeps` into the project
-* Write (untested) robot code for controlling the drive base and manipulator with a joystick/Xbox controller
+* Write (untested) robot code for controlling the drive base and manipulator with a joystick/Xbox controller.
